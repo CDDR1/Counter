@@ -11,22 +11,15 @@ reset.addEventListener("click", () => {
 })
 
 increase.addEventListener("click", () => {
-    currentCount += 1
-    counter.innerText = currentCount
-
-    if (currentCount > 0) {
-        counter.style.color = "green"
-    }
-    else if (currentCount < 0) {
-        counter.style.color = "red"
-    }
-    else {
-        counter.style.color = "#000"
-    }
+    UpdateCounterValue(1)
 })
 
 decrease.addEventListener("click", () => {
-    currentCount -= 1
+    UpdateCounterValue(-1)
+})
+
+const UpdateCounterValue = (value) => {
+    currentCount = currentCount + value
     counter.innerText = currentCount
 
     if (currentCount > 0) {
@@ -38,5 +31,5 @@ decrease.addEventListener("click", () => {
     else {
         counter.style.color = "#000"
     }
-})
+}
 
